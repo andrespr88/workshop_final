@@ -1,4 +1,4 @@
-function GetRequest(url,procesar) {
+function getRequest(url,procesar) {
 
     $.ajax({
         type: "GET",

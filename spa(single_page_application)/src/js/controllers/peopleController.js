@@ -5,7 +5,7 @@ import { getLocalList, setLocalList, buscarPersonajeLocal } from "../utils/local
 function peopleController() {
     const urlInicial = "https://swapi.co/api/people/";
     
-    ObtenerTodos();
+    obtenerTodos();
     
     $("#botonBuscar").click(buscarEnLaLista);
     $("#inputBuscar").keypress(function () {
@@ -14,11 +14,11 @@ function peopleController() {
         }
     });
     
-    function ObtenerTodos() {
-        getRequest(urlInicial, ProcesarPersonas);
+    function obtenerTodos() {
+        getRequest(urlInicial, procesarPersonas);
     }
 
-    function ProcesarPersonas(datos) {
+    function procesarPersonas(datos) {
         //obtengo el vector de los personajes
         var personajes = datos.results;
         //muestro los personajes en pantalla
@@ -29,7 +29,7 @@ function peopleController() {
         if (nuevaUrl) {
             //asocio el evento para que cargue los personajes de la nueva url
             $("#seeMore").one("click", function () {
-                getRequest(nuevaUrl, ProcesarPersonas);
+                getRequest(nuevaUrl, procesarPersonas);
             });
         } else $("#seeMore").remove();//si no existe la nueva url, borro el boton "ver más"
     }

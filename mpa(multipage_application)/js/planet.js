@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    ObtenerTodos();
+    obtenerTodos();
 });
 
-function ObtenerTodos() {
-    GetRequest("https://swapi.co/api/planets/", ProcesarPlanetas);
+function obtenerTodos() {
+    getRequest("https://swapi.co/api/planets/", ProcesarPlanetas);
 }
 
 function ProcesarPlanetas(datos) {
@@ -13,7 +13,7 @@ function ProcesarPlanetas(datos) {
     var url = datos.next;
     if (url){
         $("#seeMore").one("click",function(){
-            GetRequest(url, ProcesarPlanetas);
+            getRequest(url, ProcesarPlanetas);
         });
     } else $("#seeMore").remove();
 }

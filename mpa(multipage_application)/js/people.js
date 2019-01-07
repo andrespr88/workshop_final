@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    ObtenerTodos();
+    obtenerTodos();
     $("#botonBuscar").click(buscarEnLaLista);
     $("#inputBuscar").keypress(function(e){
         //entra si la tecla pulsada es enter 
@@ -11,11 +11,11 @@ $( document ).ready(function() {
     });
 });
 
-function ObtenerTodos(){
-    GetRequest("https://swapi.co/api/people/",ProcesarPersonas);
+function obtenerTodos(){
+    getRequest("https://swapi.co/api/people/",procesarPersonas);
 }
 
-function ProcesarPersonas(datos){
+function procesarPersonas(datos){
     //obtengo el vector de los personajes
     var personajes = datos.results;
     //muestro los personajes en pantalla
@@ -26,7 +26,7 @@ function ProcesarPersonas(datos){
     if (nuevaUrl){
         //asocio el evento para que cargue los personajes de la nueva url
         $("#seeMore").one("click",function(){
-          GetRequest(nuevaUrl,ProcesarPersonas);
+          getRequest(nuevaUrl,procesarPersonas);
       });
     } else $("#seeMore").remove();//si no existe la nueva url, borro el boton "ver más"
 }
