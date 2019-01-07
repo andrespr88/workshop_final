@@ -45,6 +45,24 @@ function traducirColorOjos(texto){
         case "hazel":
             texto = "avellana";
             break;
+        case "pink":
+            texto = "rosa";
+            break;
+        case "white":
+            texto = "blanco";
+            break;
+        case "dark":
+            texto = "oscuro";
+            break;
+        case "unknown":
+            texto = "desconocido";
+            break;
+        case "red, blue":
+            texto = "rojo, azul";
+            break;
+        case "green, yellow":
+            texto = "verde, amarillo";
+            break;
         default:
             break;
     }

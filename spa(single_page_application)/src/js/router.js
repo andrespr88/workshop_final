@@ -4,8 +4,6 @@ import peopleController from './controllers/peopleController'
 import localController from './controllers/localController'
 import contactContoller from './controllers/contactContoller'
 
-function router(){
-
   crossroads.addRoute('/', function () {
     $('#root').load('./partials/home.html', homeController);
     console.log('Pagina Principal');
@@ -33,6 +31,3 @@ function router(){
   
   crossroads.parse(window.location.hash)
 
-}
-
-export default router
